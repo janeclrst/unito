@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.2.16
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.6
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,9 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+flutter_gen:
+  integrations:
+    flutter_svg: true
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -60,7 +64,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/icons/
+    - assets/icons/arrows/
     - assets/illustrations/onboarding/
     - assets/launcher_icon/
 
