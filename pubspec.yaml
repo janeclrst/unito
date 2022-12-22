@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.2.16
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.6
+  dots_indicator: ^2.1.0
 
 dev_dependencies:
   flutter_test:
