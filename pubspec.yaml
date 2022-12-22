@@ -63,6 +63,7 @@ flutter:
     - assets/icons/
     - assets/illustrations/onboarding/
     - assets/launcher_icon/
+    - assets/colors/
 
 flutter_icons:
   android: true
