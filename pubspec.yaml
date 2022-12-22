@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.16
   flutter_svg: ^1.1.6
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +61,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
-    - assets/illustrations/
+    - assets/illustrations/onboarding/
     - assets/launcher_icon/
 
 flutter_icons:
