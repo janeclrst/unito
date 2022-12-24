@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/screen/onboarding/contents_data.dart';
+import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/ui/button/button_with_icon.dart';
 
 import 'package:unito/widgets/onboarding_content.dart';
@@ -51,8 +52,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 controller: _pageController,
                 count: contentsData.length,
                 effect: const WormEffect(
-                  activeDotColor: Color(0xFF8B5CF6),
-                  dotColor: Color(0xFFF5F3FF),
+                  activeDotColor: ExtendedColors.violet500,
+                  dotColor: ExtendedColors.violet50,
                   dotHeight: 12.0,
                   dotWidth: 12.0,
                   spacing: 16.0,
