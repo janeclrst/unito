@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/icons/arrows/
     - assets/illustrations/onboarding/
+    - assets/illustrations/welcome/
     - assets/launcher_icon/
 
 flutter_icons:
