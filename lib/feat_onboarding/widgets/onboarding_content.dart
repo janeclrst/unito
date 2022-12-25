@@ -32,7 +32,7 @@ class OnboardingContent extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 8),
         Text(
           description,
           textAlign: TextAlign.center,
