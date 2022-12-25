@@ -1,6 +1,6 @@
-import 'package:unito/feat_onboarding/constants/onboard_title.dart';
+import 'package:unito/src/constants/onboard_title.dart';
 import 'package:unito/gen/assets.gen.dart';
-import 'package:unito/feat_onboarding/models/onboard.dart';
+import 'package:unito/src/features/auth/models/onboard.dart';
 
 List<Onboard> contentsData = [
   Onboard(

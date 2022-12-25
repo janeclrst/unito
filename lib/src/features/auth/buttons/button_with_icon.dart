@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unito/feat_welcome/screens/welcome_screen.dart';
+import 'package:unito/src/features/auth/screens/welcome_screen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
 class ButtonWithIcon extends StatelessWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unito/gen/assets.gen.dart';
-import 'package:unito/feat_onboarding/view_models/contents_data.dart';
+import 'package:unito/src/features/auth/view_models/contents_data.dart';
 import 'package:unito/src/colors/extended_colors.dart';
-import 'package:unito/feat_onboarding/button/button_with_icon.dart';
+import 'package:unito/src/features/auth/buttons/button_with_icon.dart';
 
-import 'package:unito/feat_onboarding/widgets/onboard_widgets.dart';
+import 'package:unito/src/features/auth/widgets/onboard_widgets.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
