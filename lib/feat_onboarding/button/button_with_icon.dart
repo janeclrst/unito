@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:unito/feat_welcome/screens/welcome_screen.dart';
 
 class ButtonWithIcon extends StatelessWidget {
   const ButtonWithIcon({
@@ -24,8 +25,9 @@ class ButtonWithIcon extends StatelessWidget {
             color: Colors.white, fontWeight: FontWeight.bold),
       ),
       onPressed: () {
-        _pageController.nextPage(
-            duration: const Duration(milliseconds: 300), curve: Curves.ease);
+        bool isLastPage = _pageController.position.pixels ==
+            _pageController.position.maxScrollExtent;
+        isLastPage ? toWelcome(context) : nextPage();
       },
       icon: SvgPicture.asset(
         icon,
@@ -49,5 +51,15 @@ class ButtonWithIcon extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void toWelcome(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Welcome()));
+  }
+
+  void nextPage() {
+    _pageController.nextPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 }

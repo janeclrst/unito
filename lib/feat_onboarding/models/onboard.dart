@@ -1,10 +1,10 @@
 class Onboard {
   String imgPath;
   String title;
-  String desc;
+  String subTitle;
   Onboard({
     required this.imgPath,
     required this.title,
-    required this.desc,
+    required this.subTitle,
   });
 }

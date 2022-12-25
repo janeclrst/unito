@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:responsive_framework/responsive_framework.dart';
-import 'package:unito/screen/onboarding/onboarding_screen.dart';
+import 'package:unito/feat_onboarding/screens/onboarding_screen.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unito/gen/assets.gen.dart';
-import 'package:unito/screen/onboarding/contents_data.dart';
+import 'package:unito/feat_onboarding/view_models/contents_data.dart';
 import 'package:unito/src/colors/extended_colors.dart';
-import 'package:unito/ui/button/button_with_icon.dart';
+import 'package:unito/feat_onboarding/button/button_with_icon.dart';
 
-import 'package:unito/widgets/onboarding_content.dart';
+import 'package:unito/feat_onboarding/widgets/onboarding_content.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   itemBuilder: ((context, index) => OnboardingContent(
                         imgPath: contentsData[index].imgPath,
                         title: contentsData[index].title,
-                        description: contentsData[index].desc,
+                        description: contentsData[index].subTitle,
                       )),
                 ),
               ),
