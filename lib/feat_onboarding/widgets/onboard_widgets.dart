@@ -21,7 +21,7 @@ class OnboardingContent extends StatelessWidget {
       children: [
         SvgPicture.asset(
           imgPath,
-          height: 250,
+          height: MediaQuery.of(context).size.height * 0.4,
         ),
         const SizedBox(height: 32),
         Text(
