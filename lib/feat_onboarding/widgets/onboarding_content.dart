@@ -23,6 +23,7 @@ class OnboardingContent extends StatelessWidget {
           imgPath,
           height: 250,
         ),
+        const SizedBox(height: 32),
         Text(
           title,
           textAlign: TextAlign.center,
