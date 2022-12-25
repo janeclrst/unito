@@ -17,11 +17,10 @@ class WelcomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SvgPicture.asset(
           imgPath,
-          height: 300,
+          height: MediaQuery.of(context).size.height * 0.5,
         ),
         Text(
           title,
@@ -40,7 +39,7 @@ class WelcomeContent extends StatelessWidget {
             fontSize: 14,
             color: Colors.white.withOpacity(0.8),
           ),
-        )
+        ),
       ],
     );
   }
