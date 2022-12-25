@@ -5,7 +5,7 @@ import 'package:unito/feat_onboarding/view_models/contents_data.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/feat_onboarding/button/button_with_icon.dart';
 
-import 'package:unito/feat_onboarding/widgets/onboarding_content.dart';
+import 'package:unito/feat_onboarding/widgets/onboard_widgets.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
