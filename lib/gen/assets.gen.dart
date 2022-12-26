@@ -22,6 +22,8 @@ class $AssetsIllustrationsGen {
 
   $AssetsIllustrationsOnboardingGen get onboarding =>
       const $AssetsIllustrationsOnboardingGen();
+  $AssetsIllustrationsWelcomeGen get welcome =>
+      const $AssetsIllustrationsWelcomeGen();
 }
 
 class $AssetsLauncherIconGen {
@@ -85,6 +87,17 @@ class $AssetsIllustrationsOnboardingGen {
         illustrations3,
         illustrations4
       ];
+}
+
+class $AssetsIllustrationsWelcomeGen {
+  const $AssetsIllustrationsWelcomeGen();
+
+  /// File path: assets/illustrations/welcome/rocket.svg
+  SvgGenImage get rocket =>
+      const SvgGenImage('assets/illustrations/welcome/rocket.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [rocket];
 }
 
 class Assets {
