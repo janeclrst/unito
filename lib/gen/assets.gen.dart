@@ -15,6 +15,10 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   $AssetsIconsArrowsGen get arrows => const $AssetsIconsArrowsGen();
+  $AssetsIconsCommunicationsGen get communications =>
+      const $AssetsIconsCommunicationsGen();
+  $AssetsIconsProfileAndUsersGen get profileAndUsers =>
+      const $AssetsIconsProfileAndUsersGen();
 }
 
 class $AssetsIllustrationsGen {
@@ -54,6 +58,28 @@ class $AssetsIconsArrowsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [arrowLeft, arrowRight];
+}
+
+class $AssetsIconsCommunicationsGen {
+  const $AssetsIconsCommunicationsGen();
+
+  /// File path: assets/icons/communications/phone.svg
+  SvgGenImage get phone =>
+      const SvgGenImage('assets/icons/communications/phone.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [phone];
+}
+
+class $AssetsIconsProfileAndUsersGen {
+  const $AssetsIconsProfileAndUsersGen();
+
+  /// File path: assets/icons/profileAndUsers/user-profile-01.svg
+  SvgGenImage get userProfile01 =>
+      const SvgGenImage('assets/icons/profileAndUsers/user-profile-01.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [userProfile01];
 }
 
 class $AssetsIllustrationsOnboardingGen {

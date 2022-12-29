@@ -4,6 +4,8 @@ import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/constants/welcome_title.dart';
 import 'package:unito/src/features/auth/buttons/primary_button.dart';
 import 'package:unito/src/features/auth/buttons/secondary_button.dart';
+import 'package:unito/src/features/auth/screens/phonenum_login_screen.dart';
+import 'package:unito/src/features/auth/screens/phonenum_signup_screen.dart';
 import 'package:unito/src/features/auth/widgets/welcome_widget.dart';
 
 class Welcome extends StatelessWidget {
@@ -23,16 +25,18 @@ class Welcome extends StatelessWidget {
                   title: WelcomeTitle.title1,
                   subTitle: WelcomeTitle.subTitle1),
               Row(
-                children: const [
+                children: [
                   Expanded(
                     child: SecondaryButton(
                       text: "Login",
+                      navTo: PhoneNumLogin(),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: PrimaryButton(
                       text: "Sign up",
+                      navTo: PhoneNumSignUp(),
                     ),
                   ),
                 ],

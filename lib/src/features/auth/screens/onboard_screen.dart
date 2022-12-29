@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unito/gen/assets.gen.dart';
+import 'package:unito/src/features/auth/screens/welcome_screen.dart';
 import 'package:unito/src/features/auth/view_models/contents_data.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/src/features/auth/buttons/button_with_icon.dart';
@@ -64,6 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 pageController: _pageController,
                 icon: Assets.icons.arrows.arrowRight.path,
                 title: "Let's get started",
+                navTo: const Welcome(),
               ),
             ],
           ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+class LongPrimaryButton extends StatelessWidget {
+  const LongPrimaryButton({
     Key? key,
     required this.text,
     required this.navTo,
@@ -15,10 +15,7 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => navTo),
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context) => navTo));
       },
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -26,16 +23,26 @@ class PrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        padding: MaterialStateProperty.all<EdgeInsets>(
-          const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+        // padding: MaterialStateProperty.all<EdgeInsets>(
+        //   const EdgeInsets.symmetric(
+        //     vertical: 12,
+        //     horizontal: 128,
+        //   ),
+        // ),
+        backgroundColor: MaterialStateProperty.all<Color>(
+          ExtendedColors.violet800,
         ),
-        backgroundColor:
-            MaterialStateProperty.all<Color>(ExtendedColors.violet800),
+        minimumSize: MaterialStateProperty.all<Size>(
+          Size(MediaQuery.of(context).size.width, 48.0),
+        ),
       ),
       child: Text(
         text,
         style: GoogleFonts.nunito(
-            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
       ),
     );
   }

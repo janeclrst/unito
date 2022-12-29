@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: const Color(0x06000AFF)),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFF06000A)),
       home: const OnboardingScreen(),
       // builder: (context, child) => ResponsiveWrapper.builder(
       //   child,
