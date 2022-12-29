@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unito/src/features/auth/screens/welcome_screen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
 class ButtonWithIcon extends StatelessWidget {
@@ -10,12 +9,14 @@ class ButtonWithIcon extends StatelessWidget {
     required PageController pageController,
     required this.icon,
     required this.title,
+    required this.navTo,
   })  : _pageController = pageController,
         super(key: key);
 
   final PageController _pageController;
   final String icon;
   final String title;
+  final Widget navTo;
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +56,7 @@ class ButtonWithIcon extends StatelessWidget {
   }
 
   void toWelcome(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Welcome()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => navTo));
   }
 
   void nextPage() {
