@@ -5,7 +5,7 @@ import 'package:unito/src/constants/welcome_title.dart';
 import 'package:unito/src/features/auth/buttons/primary_button.dart';
 import 'package:unito/src/features/auth/buttons/secondary_button.dart';
 import 'package:unito/src/features/auth/screens/login_screen.dart';
-import 'package:unito/src/features/auth/screens/signup_screen.dart';
+import 'package:unito/src/features/auth/screens/phonenum_signup_screen.dart';
 import 'package:unito/src/features/auth/widgets/welcome_widget.dart';
 
 class Welcome extends StatelessWidget {
