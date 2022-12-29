@@ -67,6 +67,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/arrows/
+    - assets/icons/communications/
+    - assets/icons/profileAndUsers/
     - assets/illustrations/onboarding/
     - assets/illustrations/welcome/
     - assets/launcher_icon/
