@@ -36,7 +36,7 @@ class Welcome extends StatelessWidget {
                   Expanded(
                     child: PrimaryButton(
                       text: "Sign up",
-                      navTo: SignUp(),
+                      navTo: PhoneNumSignUp(),
                     ),
                   ),
                 ],
