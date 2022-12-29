@@ -4,14 +4,22 @@ import 'package:unito/src/colors/extended_colors.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
-    Key? key, required this.text,
+    Key? key,
+    required this.text,
+    required this.navTo,
   }) : super(key: key);
   final String text;
+  final Widget navTo;
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => navTo),
+        );
+      },
       style: ButtonStyle(
         padding: MaterialStateProperty.all<EdgeInsets>(
             const EdgeInsets.symmetric(horizontal: 32, vertical: 16)),
