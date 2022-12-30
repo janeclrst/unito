@@ -115,9 +115,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                             child: Checkbox(
                               value: _isChecked,
                               onChanged: (bool? value) {
-                                setState(() {
-                                  _isChecked = value!;
-                                });
+                                setState(() => _isChecked = value!);
                               },
                               checkColor: ExtendedColors.violet900,
                               fillColor: MaterialStateProperty.all<Color>(
