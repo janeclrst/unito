@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
-class LongPrimaryButton extends StatelessWidget {
+class LongPrimaryButton extends StatefulWidget {
   const LongPrimaryButton({
     Key? key,
     required this.text,
@@ -14,14 +14,19 @@ class LongPrimaryButton extends StatelessWidget {
   final bool checkBoxValue;
 
   @override
+  State<LongPrimaryButton> createState() => _LongPrimaryButtonState();
+}
+
+class _LongPrimaryButtonState extends State<LongPrimaryButton> {
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: checkBoxValue
+      onPressed: widget.checkBoxValue
           ? () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => navTo,
+                  builder: (context) => widget.navTo,
                 ),
               );
             }
@@ -34,14 +39,14 @@ class LongPrimaryButton extends StatelessWidget {
         ),
         backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {
-          return checkBoxValue ? ExtendedColors.violet800 : Colors.grey;
+          return widget.checkBoxValue ? ExtendedColors.violet800 : Colors.grey;
         }),
         minimumSize: MaterialStateProperty.all<Size>(
           Size(MediaQuery.of(context).size.width, 48.0),
         ),
       ),
       child: Text(
-        text,
+        widget.text,
         style: GoogleFonts.nunito(
           color: Colors.white,
           fontWeight: FontWeight.bold,
