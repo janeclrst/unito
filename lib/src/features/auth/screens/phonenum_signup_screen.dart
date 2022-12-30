@@ -104,20 +104,6 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                               setState(() => _isButtonActive = isButtonActive);
                             });
                           }),
-                          validator: (value) {
-                            if (value!.contains(RegExp(r'^[a-zA-Z]'))) {
-                              return ScaffoldMessenger.of(context)
-                                  .showSnackBar(
-                                    const SnackBar(
-                                      content:
-                                          Text('Please input a valid number'),
-                                      duration: Duration(milliseconds: 300),
-                                    ),
-                                  )
-                                  .toString();
-                            }
-                            return null;
-                          },
                           controller: _textEditingController,
                           keyboardType: TextInputType.phone,
                           style: const TextStyle(
