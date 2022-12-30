@@ -8,10 +8,12 @@ class LongPrimaryButton extends StatefulWidget {
     required this.text,
     required this.navTo,
     required this.checkBoxValue,
+    required this.isButtonActive,
   }) : super(key: key);
   final String text;
   final Widget navTo;
   final bool checkBoxValue;
+  final bool isButtonActive;
 
   @override
   State<LongPrimaryButton> createState() => _LongPrimaryButtonState();
@@ -21,16 +23,29 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: widget.checkBoxValue
-          ? () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => widget.navTo,
+      onPressed: () {
+        if (widget.checkBoxValue == true && widget.isButtonActive == true) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => widget.navTo,
+            ),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Please check the box or provide a valid number',
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 16,
                 ),
-              );
-            }
-          : null,
+              ),
+              backgroundColor: ExtendedColors.violet400,
+            ),
+          );
+        }
+      },
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
@@ -39,7 +54,9 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
         ),
         backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {
-          return widget.checkBoxValue ? ExtendedColors.violet800 : Colors.grey;
+          return widget.checkBoxValue && widget.isButtonActive
+              ? ExtendedColors.violet800
+              : Colors.grey;
         }),
         minimumSize: MaterialStateProperty.all<Size>(
           Size(MediaQuery.of(context).size.width, 48.0),
