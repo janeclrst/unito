@@ -31,7 +31,8 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
               builder: (context) => widget.navTo,
             ),
           );
-        } else {
+        } else if (widget.checkBoxValue != true &&
+            widget.isButtonActive != true) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
@@ -41,7 +42,46 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
                   fontSize: 16,
                 ),
               ),
-              backgroundColor: ExtendedColors.violet400,
+              backgroundColor: ExtendedColors.red600,
+            ),
+          );
+        } else if (widget.checkBoxValue != true) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Please check the box',
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              backgroundColor: ExtendedColors.red600,
+            ),
+          );
+        } else if (widget.isButtonActive != true) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Please provide a valid number :(',
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              backgroundColor: ExtendedColors.red600,
+            ),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Something error occured :(',
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+              backgroundColor: ExtendedColors.red600,
             ),
           );
         }
