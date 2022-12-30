@@ -16,6 +16,20 @@ class PhoneNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // TODO: add an error handling if user input a text except number
+      validator: (value) {
+        if (value!.contains(RegExp(r'^[a-zA-Z]'))) {
+          return ScaffoldMessenger.of(context)
+              .showSnackBar(
+                const SnackBar(
+                  content: Text('Please input a valid number'),
+                  duration: Duration(milliseconds: 300),
+                ),
+              )
+              .toString();
+        }
+        return null;
+      },
       onChanged: (value) {
         const int phoneNumLength = 15;
         if (value.length == phoneNumLength) FocusScope.of(context).nextFocus();
