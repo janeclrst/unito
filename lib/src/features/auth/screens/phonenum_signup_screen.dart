@@ -182,6 +182,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                   LongPrimaryButton(
                     text: 'Sign up',
                     navTo: OTP(),
+                    checkBoxValue: _isChecked,
                   ),
                   const SizedBox(height: 24),
                   RichText(
