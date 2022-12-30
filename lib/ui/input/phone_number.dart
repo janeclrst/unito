@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
-class PhoneNumber extends StatelessWidget {
+class PhoneNumber extends StatefulWidget {
   const PhoneNumber({
     Key? key,
     required this.icon,
@@ -13,6 +13,11 @@ class PhoneNumber extends StatelessWidget {
   final String hint;
   final TextEditingController? controller;
 
+  @override
+  State<PhoneNumber> createState() => _PhoneNumberState();
+}
+
+class _PhoneNumberState extends State<PhoneNumber> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -34,7 +39,7 @@ class PhoneNumber extends StatelessWidget {
         const int phoneNumLength = 15;
         if (value.length == phoneNumLength) FocusScope.of(context).nextFocus();
       },
-      controller: controller,
+      controller: widget.controller,
       keyboardType: TextInputType.phone,
       style: const TextStyle(
         color: ExtendedColors.violet500,
@@ -52,7 +57,7 @@ class PhoneNumber extends StatelessWidget {
             width: 1.5,
           ),
         ),
-        hintText: hint,
+        hintText: widget.hint,
         hintStyle: TextStyle(
           color: Colors.black.withOpacity(0.3),
           fontSize: 16,
@@ -60,7 +65,7 @@ class PhoneNumber extends StatelessWidget {
         prefixIcon: Padding(
           padding: const EdgeInsets.all(12.0),
           child: SvgPicture.asset(
-            icon,
+            widget.icon,
             color: Colors.black.withOpacity(0.3),
           ),
         ),
