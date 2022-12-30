@@ -16,6 +16,10 @@ class PhoneNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        const int phoneNumLength = 15;
+        if (value.length == phoneNumLength) FocusScope.of(context).nextFocus();
+      },
       controller: controller,
       keyboardType: TextInputType.phone,
       style: const TextStyle(
