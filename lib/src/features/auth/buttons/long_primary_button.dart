@@ -23,12 +23,6 @@ class LongPrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        // padding: MaterialStateProperty.all<EdgeInsets>(
-        //   const EdgeInsets.symmetric(
-        //     vertical: 12,
-        //     horizontal: 128,
-        //   ),
-        // ),
         backgroundColor: MaterialStateProperty.all<Color>(
           ExtendedColors.violet800,
         ),
