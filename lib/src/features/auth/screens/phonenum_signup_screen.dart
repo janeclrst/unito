@@ -96,6 +96,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
+                          // TODO: add regex alphabets and special chars except "plus" signs
                           onChanged: ((value) {
                             setState(() {
                               _textFormFieldValue = value;
