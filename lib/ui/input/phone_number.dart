@@ -15,7 +15,7 @@ class PhoneNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       onChanged: (value) {
         const int phoneNumLength = 15;
         if (value.length == phoneNumLength) FocusScope.of(context).nextFocus();
