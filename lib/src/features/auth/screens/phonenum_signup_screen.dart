@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/gen/assets.gen.dart';
@@ -20,6 +21,8 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
   bool _isChecked = false;
   bool _isButtonActive = false;
   String _textFormFieldValue = '';
+
+  String pattern = r'''[0-9+\s]''';
 
   @override
   void initState() {
@@ -96,7 +99,9 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                         ),
                         const SizedBox(height: 8),
                         TextFormField(
-                          // TODO: add regex alphabets and special chars except "plus" signs
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(pattern))
+                          ],
                           onChanged: ((value) {
                             setState(() {
                               _textFormFieldValue = value;
