@@ -1,12 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/src/features/auth/buttons/long_primary_button.dart';
 import 'package:unito/src/features/auth/screens/email_signup_screen.dart';
 import 'package:unito/src/features/auth/screens/otp_screen.dart';
-import 'package:unito/ui/input/phone_number.dart';
 
 class PhoneNumSignUp extends StatefulWidget {
   PhoneNumSignUp({Key? key}) : super(key: key);
@@ -18,6 +19,10 @@ class PhoneNumSignUp extends StatefulWidget {
 class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
   late TextEditingController _textEditingController;
   bool _isChecked = false;
+  bool _isButtonActive = false;
+  String _textFormFieldValue = '';
+
+  String pattern = r'''[0-9+\s]''';
 
   @override
   void initState() {
@@ -93,10 +98,53 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        PhoneNumber(
+                        TextFormField(
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(pattern))
+                          ],
+                          onChanged: ((value) {
+                            setState(() {
+                              _textFormFieldValue = value;
+                              final isButtonActive =
+                                  _textEditingController.text.length >= 14;
+                              setState(() => _isButtonActive = isButtonActive);
+                            });
+                          }),
                           controller: _textEditingController,
-                          hint: "+62 812 8787 9999",
-                          icon: Assets.icons.communications.phone.path,
+                          keyboardType: TextInputType.phone,
+                          style: const TextStyle(
+                            color: ExtendedColors.violet500,
+                          ),
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 12),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                              borderSide: const BorderSide(
+                                color: ExtendedColors.violet500,
+                                width: 1.5,
+                              ),
+                            ),
+                            hintText: '+62 812 8787 9999',
+                            hintStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.3),
+                              fontSize: 16,
+                            ),
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: SvgPicture.asset(
+                                Assets.icons.communications.phone.path,
+                                color: Colors.black.withOpacity(0.3),
+                              ),
+                            ),
+                            filled: true,
+                            fillColor: ExtendedColors.violet50,
+                          ),
+                          autocorrect: true,
+                          cursorColor: ExtendedColors.violet800,
                         ),
                       ],
                     ),
@@ -115,9 +163,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                             child: Checkbox(
                               value: _isChecked,
                               onChanged: (bool? value) {
-                                setState(() {
-                                  _isChecked = value!;
-                                });
+                                setState(() => _isChecked = value!);
                               },
                               checkColor: ExtendedColors.violet900,
                               fillColor: MaterialStateProperty.all<Color>(
@@ -184,6 +230,8 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                   LongPrimaryButton(
                     text: 'Sign up',
                     navTo: OTP(),
+                    checkBoxValue: _isChecked,
+                    isButtonActive: _isButtonActive,
                   ),
                   const SizedBox(height: 24),
                   RichText(
