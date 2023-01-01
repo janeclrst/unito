@@ -17,6 +17,7 @@ class $AssetsIconsGen {
   $AssetsIconsArrowsGen get arrows => const $AssetsIconsArrowsGen();
   $AssetsIconsCommunicationsGen get communications =>
       const $AssetsIconsCommunicationsGen();
+  $AssetsIconsGeneralGen get general => const $AssetsIconsGeneralGen();
   $AssetsIconsProfileAndUsersGen get profileAndUsers =>
       const $AssetsIconsProfileAndUsersGen();
 }
@@ -73,6 +74,16 @@ class $AssetsIconsCommunicationsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [mail01, phone];
+}
+
+class $AssetsIconsGeneralGen {
+  const $AssetsIconsGeneralGen();
+
+  /// File path: assets/icons/general/x-01.svg
+  SvgGenImage get x01 => const SvgGenImage('assets/icons/general/x-01.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [x01];
 }
 
 class $AssetsIconsProfileAndUsersGen {
