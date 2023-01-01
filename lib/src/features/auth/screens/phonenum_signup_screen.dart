@@ -22,6 +22,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
   bool _isButtonActive = false;
   String _textFormFieldValue = '';
 
+  // Regex pattern that matches numeric, plus sign and whitespace
   String pattern = r'''[0-9+\s]''';
 
   @override
