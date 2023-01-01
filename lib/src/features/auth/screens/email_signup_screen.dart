@@ -1,10 +1,6 @@
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/src/features/auth/widgets/email_input.dart';
 
