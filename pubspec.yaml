@@ -70,6 +70,7 @@ flutter:
     - assets/icons/arrows/
     - assets/icons/communications/
     - assets/icons/profileAndUsers/
+    - assets/icons/general/
     - assets/illustrations/onboarding/
     - assets/illustrations/welcome/
     - assets/launcher_icon/
