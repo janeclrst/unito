@@ -9,11 +9,13 @@ class LongPrimaryButton extends StatefulWidget {
     required this.navTo,
     required this.checkBoxValue,
     required this.isButtonActive,
+    required this.warningMessage,
   }) : super(key: key);
   final String text;
   final Widget navTo;
   final bool checkBoxValue;
   final bool isButtonActive;
+  final String warningMessage;
 
   @override
   State<LongPrimaryButton> createState() => _LongPrimaryButtonState();
@@ -36,7 +38,7 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
-                'Please check the box or provide a valid number',
+                widget.warningMessage,
                 style: GoogleFonts.nunito(
                   color: Colors.white,
                   fontSize: 16,
