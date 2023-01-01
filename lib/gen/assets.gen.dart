@@ -63,12 +63,16 @@ class $AssetsIconsArrowsGen {
 class $AssetsIconsCommunicationsGen {
   const $AssetsIconsCommunicationsGen();
 
+  /// File path: assets/icons/communications/mail-01.svg
+  SvgGenImage get mail01 =>
+      const SvgGenImage('assets/icons/communications/mail-01.svg');
+
   /// File path: assets/icons/communications/phone.svg
   SvgGenImage get phone =>
       const SvgGenImage('assets/icons/communications/phone.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [phone];
+  List<SvgGenImage> get values => [mail01, phone];
 }
 
 class $AssetsIconsProfileAndUsersGen {
