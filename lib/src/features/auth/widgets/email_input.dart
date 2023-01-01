@@ -34,7 +34,7 @@ class _EmailInputState extends State<EmailInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      autovalidateMode: AutovalidateMode.always,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       autofillHints: const [AutofillHints.email],
       validator: (email) => email != null && EmailValidator.validate(email)
           ? null
