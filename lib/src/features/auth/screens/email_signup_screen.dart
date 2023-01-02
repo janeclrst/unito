@@ -35,8 +35,6 @@ class _EmailSignUpState extends State<EmailSignUp> {
     super.dispose();
   }
 
-  void onListen() => setState(() {});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
