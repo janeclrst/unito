@@ -17,17 +17,21 @@ class PhoneNumSignUp extends StatefulWidget {
 }
 
 class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
-  late PhoneNumber _phoneNumber;
+  late PhoneController _phoneController;
+  late PhoneNumber _phoneNumber =
+      const PhoneNumber(isoCode: IsoCode.ID, nsn: '');
   bool _isChecked = false;
   bool _isButtonActive = false;
 
   @override
   void initState() {
+    _phoneController = PhoneController(_phoneNumber);
     super.initState();
   }
 
   @override
   void dispose() {
+    _phoneController.dispose();
     super.dispose();
   }
 
@@ -109,7 +113,6 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                   AutofillHints.telephoneNumber
                                 ],
                                 shouldFormat: true,
-                                // controller: _phoneController,
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
                                 defaultCountry: IsoCode.ID,
