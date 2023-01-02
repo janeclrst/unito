@@ -64,7 +64,7 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
-                'Please provide a valid number :(',
+                'Please input a value',
                 style: GoogleFonts.nunito(
                   color: Colors.white,
                   fontSize: 16,
