@@ -74,6 +74,7 @@ flutter:
     - assets/icons/general/
     - assets/illustrations/onboarding/
     - assets/illustrations/welcome/
+    - assets/illustrations/third_party/
     - assets/launcher_icon/
 
 flutter_icons:
