@@ -27,6 +27,8 @@ class $AssetsIllustrationsGen {
 
   $AssetsIllustrationsOnboardingGen get onboarding =>
       const $AssetsIllustrationsOnboardingGen();
+  $AssetsIllustrationsThirdPartyGen get thirdParty =>
+      const $AssetsIllustrationsThirdPartyGen();
   $AssetsIllustrationsWelcomeGen get welcome =>
       const $AssetsIllustrationsWelcomeGen();
 }
@@ -128,6 +130,25 @@ class $AssetsIllustrationsOnboardingGen {
         illustrations3,
         illustrations4
       ];
+}
+
+class $AssetsIllustrationsThirdPartyGen {
+  const $AssetsIllustrationsThirdPartyGen();
+
+  /// File path: assets/illustrations/third_party/facebook.svg
+  SvgGenImage get facebook =>
+      const SvgGenImage('assets/illustrations/third_party/facebook.svg');
+
+  /// File path: assets/illustrations/third_party/google.svg
+  SvgGenImage get google =>
+      const SvgGenImage('assets/illustrations/third_party/google.svg');
+
+  /// File path: assets/illustrations/third_party/twitter.svg
+  SvgGenImage get twitter =>
+      const SvgGenImage('assets/illustrations/third_party/twitter.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [facebook, google, twitter];
 }
 
 class $AssetsIllustrationsWelcomeGen {
