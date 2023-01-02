@@ -267,7 +267,8 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => EmailSignUp(),
+                                        builder: (context) =>
+                                            const EmailSignUp(),
                                       ),
                                     );
                                   },
