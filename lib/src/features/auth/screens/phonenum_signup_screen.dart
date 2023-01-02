@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:phone_form_field/phone_form_field.dart';
 import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/src/features/auth/buttons/long_primary_button.dart';
@@ -10,14 +11,16 @@ import 'package:unito/src/features/auth/screens/email_signup_screen.dart';
 import 'package:unito/src/features/auth/screens/otp_screen.dart';
 
 class PhoneNumSignUp extends StatefulWidget {
-  PhoneNumSignUp({Key? key}) : super(key: key);
+  const PhoneNumSignUp({Key? key}) : super(key: key);
 
   @override
   State<PhoneNumSignUp> createState() => _PhoneNumSignUpState();
 }
 
 class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
-  late TextEditingController _textEditingController;
+  // late TextEditingController _textEditingController;
+  late PhoneController _phoneController;
+  late PhoneNumber _phoneNumber;
   bool _isChecked = false;
   bool _isButtonActive = false;
   String _textFormFieldValue = '';
@@ -27,13 +30,16 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
 
   @override
   void initState() {
-    _textEditingController = TextEditingController(text: '+62 ');
+    // _textEditingController = TextEditingController(text: '');
+    // _phoneNumber = PhoneNumber(isoCode: IsoCode.ID, nsn: );
+    // _phoneController = PhoneController(_phoneNumber);
     super.initState();
   }
 
   @override
   void dispose() {
-    _textEditingController.dispose();
+    // _textEditingController.dispose();
+    // _phoneController.dispose();
     super.dispose();
   }
 
@@ -99,23 +105,28 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        TextFormField(
-                          inputFormatters: [
-                            FilteringTextInputFormatter.allow(RegExp(pattern))
-                          ],
-                          onChanged: ((value) {
+                        PhoneFormField(
+                          validator: PhoneValidator.compose([
+                            PhoneValidator.required(
+                                errorText: 'You must enter a value'),
+                            PhoneValidator.validMobile(),
+                          ]),
+                          autofillHints: const [AutofillHints.telephoneNumber],
+                          shouldFormat: true,
+                          // controller: _phoneController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          defaultCountry: IsoCode.ID,
+                          isCountrySelectionEnabled: false,
+                          isCountryChipPersistent: false,
+                          showFlagInInput: false,
+                          onChanged: (phone) {
                             setState(() {
-                              _textFormFieldValue = value;
+                              _phoneNumber = phone!;
                               final isButtonActive =
-                                  _textEditingController.text.length >= 14;
+                                  _phoneNumber.nsn.length >= 9;
                               setState(() => _isButtonActive = isButtonActive);
                             });
-                          }),
-                          controller: _textEditingController,
-                          keyboardType: TextInputType.phone,
-                          style: const TextStyle(
-                            color: ExtendedColors.violet500,
-                          ),
+                          },
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 12),
@@ -129,7 +140,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                 width: 1.5,
                               ),
                             ),
-                            hintText: '+62 812 8787 9999',
+                            hintText: '812-8787-9999',
                             hintStyle: TextStyle(
                               color: Colors.black.withOpacity(0.3),
                               fontSize: 16,
@@ -233,6 +244,8 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                     navTo: OTP(),
                     checkBoxValue: _isChecked,
                     isButtonActive: _isButtonActive,
+                    warningMessage:
+                        'Please check the box and provide valid number',
                   ),
                   const SizedBox(height: 24),
                   RichText(
