@@ -116,6 +116,16 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
                                 defaultCountry: IsoCode.ID,
+                                countryCodeStyle: GoogleFonts.nunito(
+                                  color:
+                                      ExtendedColors.violet500.withOpacity(0.8),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                style: TextStyle(
+                                  color: ExtendedColors.violet500,
+                                  fontFamily: GoogleFonts.nunito().fontFamily,
+                                ),
                                 isCountrySelectionEnabled: false,
                                 isCountryChipPersistent: false,
                                 showFlagInInput: false,
@@ -142,7 +152,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                     ),
                                   ),
                                   hintText: '812-8787-9999',
-                                  hintStyle: TextStyle(
+                                  hintStyle: GoogleFonts.nunito(
                                     color: Colors.black.withOpacity(0.3),
                                     fontSize: 16,
                                   ),
