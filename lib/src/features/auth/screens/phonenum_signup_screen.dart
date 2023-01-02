@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phone_form_field/phone_form_field.dart';
@@ -18,28 +17,17 @@ class PhoneNumSignUp extends StatefulWidget {
 }
 
 class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
-  // late TextEditingController _textEditingController;
-  late PhoneController _phoneController;
   late PhoneNumber _phoneNumber;
   bool _isChecked = false;
   bool _isButtonActive = false;
-  String _textFormFieldValue = '';
-
-  // Regex pattern that matches numeric, plus sign and whitespace
-  String pattern = r'''[0-9+\s]''';
 
   @override
   void initState() {
-    // _textEditingController = TextEditingController(text: '');
-    // _phoneNumber = PhoneNumber(isoCode: IsoCode.ID, nsn: );
-    // _phoneController = PhoneController(_phoneNumber);
     super.initState();
   }
 
   @override
   void dispose() {
-    // _textEditingController.dispose();
-    // _phoneController.dispose();
     super.dispose();
   }
 
