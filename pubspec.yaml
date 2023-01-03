@@ -70,6 +70,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - secrets.env.development
+    - secrets.env.production
+    - secrets.env.test
     - assets/icons/arrows/
     - assets/icons/communications/
     - assets/icons/profileAndUsers/
