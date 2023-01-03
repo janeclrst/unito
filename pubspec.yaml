@@ -44,6 +44,7 @@ dependencies:
   email_validator: ^2.1.17
   phone_form_field: ^7.0.5
   magic_sdk: ^2.0.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
