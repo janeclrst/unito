@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:magic_sdk/magic_sdk.dart';
 // import 'package:responsive_framework/responsive_framework.dart';
 import 'package:unito/src/features/auth/screens/onboard_screen.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   FlutterNativeSplash.remove();
+  await dotenv.load(fileName: "secrets.env.development");
+  String magicPublishableKey = dotenv.get('MAGIC_PUBLISHABLE_KEY');
+  Magic.instance = Magic(magicPublishableKey);
   runApp(const MyApp());
 }
 
