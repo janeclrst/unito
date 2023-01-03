@@ -43,7 +43,7 @@ dependencies:
   firebase_core: ^2.4.0
   email_validator: ^2.1.17
   phone_form_field: ^7.0.5
-  magic_sdk: ^2.0.0
+  magic_sdk: ^0.4.0
   flutter_dotenv: ^5.0.2
 
 dev_dependencies:
