@@ -21,7 +21,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
   late TextEditingController _textEditingController;
   bool _isChecked = false;
   bool _isButtonActive = false;
-  String _textFormFieldValue = '';
+  late String _textFormFieldValue;
   Magic magic = Magic.instance;
 
   @override
