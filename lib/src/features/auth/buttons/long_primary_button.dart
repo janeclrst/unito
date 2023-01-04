@@ -29,12 +29,6 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
     return ElevatedButton(
       onPressed: () {
         if (widget.checkBoxValue == true && widget.isButtonActive == true) {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => widget.navTo,
-          //   ),
-          // );
           Get.toNamed(widget.navTo);
         } else if (widget.checkBoxValue != true &&
             widget.isButtonActive != true) {
