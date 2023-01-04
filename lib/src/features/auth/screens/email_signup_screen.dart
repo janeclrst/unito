@@ -2,13 +2,12 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:magic_sdk/magic_sdk.dart';
 import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
-import 'package:unito/src/features/auth/screens/phonenum_signup_screen.dart';
 import 'package:unito/src/features/auth/widgets/social_button_widget.dart';
-import 'package:unito/src/features/main_menu/screens/home_screen.dart';
 
 class EmailSignUp extends StatefulWidget {
   const EmailSignUp({Key? key}) : super(key: key);
@@ -322,14 +321,6 @@ class _EmailSignUpState extends State<EmailSignUp> {
                         ),
                         Column(
                           children: [
-                            // LongPrimaryButton(
-                            //   text: 'Sign up',
-                            //   navTo: OTP(),
-                            //   checkBoxValue: _isChecked,
-                            //   isButtonActive: _isButtonActive,
-                            //   warningMessage:
-                            //       'Please check the box and provide valid email address',
-                            // ),
                             ElevatedButton(
                               onPressed: () async {
                                 if (_isChecked == true &&
@@ -340,12 +331,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
                                     email: _textEditingController.text,
                                   )
                                       .then((value) {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Home(),
-                                      ),
-                                    );
+                                    Get.toNamed('/home_screen');
                                   }).catchError((e) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
@@ -461,13 +447,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
                                     ),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const PhoneNumSignUp(),
-                                          ),
-                                        );
+                                        Get.toNamed('/PhonenumSignup');
                                       },
                                   ),
                                 ],

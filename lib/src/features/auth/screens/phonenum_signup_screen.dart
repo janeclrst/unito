@@ -1,13 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phone_form_field/phone_form_field.dart';
 import 'package:unito/gen/assets.gen.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 import 'package:unito/src/features/auth/buttons/long_primary_button.dart';
-import 'package:unito/src/features/auth/screens/email_signup_screen.dart';
-import 'package:unito/src/features/auth/screens/otp_screen.dart';
 
 class PhoneNumSignUp extends StatefulWidget {
   const PhoneNumSignUp({Key? key}) : super(key: key);
@@ -252,7 +251,7 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                       children: [
                         LongPrimaryButton(
                           text: 'Sign up',
-                          navTo: OTP(),
+                          navTo: 'otp',
                           checkBoxValue: _isChecked,
                           isButtonActive: _isButtonActive,
                           warningMessage:
@@ -277,19 +276,12 @@ class _PhoneNumSignUpState extends State<PhoneNumSignUp> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const EmailSignUp(),
-                                      ),
-                                    );
+                                    Get.toNamed('/EmailSignup');
                                   },
                               ),
                             ],
                           ),
                         ),
-                        // const SizedBox(height: 24),
                       ],
                     ),
                   ],
