@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
@@ -9,16 +10,13 @@ class SecondaryButton extends StatelessWidget {
     required this.navTo,
   }) : super(key: key);
   final String text;
-  final Widget navTo;
+  final String navTo;
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => navTo),
-        );
+        Get.toNamed(navTo);
       },
       style: ButtonStyle(
         padding: MaterialStateProperty.all<EdgeInsets>(

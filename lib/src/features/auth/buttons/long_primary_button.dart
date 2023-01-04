@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:unito/src/colors/extended_colors.dart';
 
@@ -12,7 +13,8 @@ class LongPrimaryButton extends StatefulWidget {
     required this.warningMessage,
   }) : super(key: key);
   final String text;
-  final Widget navTo;
+  // final Widget navTo;
+  final String navTo;
   final bool checkBoxValue;
   final bool isButtonActive;
   final String warningMessage;
@@ -27,12 +29,13 @@ class _LongPrimaryButtonState extends State<LongPrimaryButton> {
     return ElevatedButton(
       onPressed: () {
         if (widget.checkBoxValue == true && widget.isButtonActive == true) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => widget.navTo,
-            ),
-          );
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => widget.navTo,
+          //   ),
+          // );
+          Get.toNamed(widget.navTo);
         } else if (widget.checkBoxValue != true &&
             widget.isButtonActive != true) {
           ScaffoldMessenger.of(context).showSnackBar(
