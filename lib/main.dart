@@ -11,6 +11,7 @@ import 'package:unito/src/features/auth/screens/otp_screen.dart';
 import 'package:unito/src/features/auth/screens/phonenum_login_screen.dart';
 import 'package:unito/src/features/auth/screens/phonenum_signup_screen.dart';
 import 'package:unito/src/features/auth/screens/welcome_screen.dart';
+import 'package:unito/src/features/main_menu/screens/home_screen.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/PhonenumLogin', page: () => PhoneNumLogin()),
         GetPage(name: '/otp', page: () => OTP()),
         GetPage(name: '/welcome', page: () => const Welcome()),
+        GetPage(name: '/home', page: () => Home()),
       ],
       // builder: (context, child) => ResponsiveWrapper.builder(
       //   child,
