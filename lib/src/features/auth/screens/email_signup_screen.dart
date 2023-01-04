@@ -331,7 +331,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
                                     email: _textEditingController.text,
                                   )
                                       .then((value) {
-                                    Get.toNamed('/home_screen');
+                                    Get.offNamed('/home');
                                   }).catchError((e) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
